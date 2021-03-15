@@ -1,0 +1,9 @@
+<button (click)="AddNewCourse()" >Add</button>
+
+<ul *ngFor="let course of courses; index as i; even as isEven">
+    <li class="list-group-item" [class.active]="isEven">
+        {{i}} - {{course.name}}
+        <button (click)="RemoveCourse(course)">Remove</button>
+        <button (click)="ChangeCourse(course)">Change</button>
+    </li>
+</ul>

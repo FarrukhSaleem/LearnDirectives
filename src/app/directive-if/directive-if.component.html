@@ -1,0 +1,23 @@
+<div *ngIf="Courses.length>0">
+    List of courses - by simple ngIf
+</div>
+<div *ngIf="Courses.length==0">
+    No courses found - by simple ngIf
+</div>
+
+
+<div *ngIf="Courses.length>0; then CoursesList else noCourses">
+</div>
+<ng-template #CoursesList>
+    List of Courses - by if else condition through ng-template
+</ng-template>
+<ng-template #noCourses>
+    No Courses yet - by if else condition through ng-template
+</ng-template>
+
+<div [hidden]="Courses.length==0">
+    List of courses - by hidden Attribute directive
+</div>
+<div [hidden]="Courses.length>0">
+    No courses found - by hidden Attribute directive
+</div>
